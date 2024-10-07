@@ -24,6 +24,10 @@ export class UserService {
   
   authenticateUser(login: Login) : Observable<Token>
   {
-    return this.http.post<Token>("https://localhost:7020/api/Authenntication/Authenticate",login);
+    return this.http.post<Token>("https://localhost:7020/api/Authenntication",login);
+
+    
+    //Authenticate
+    //return this.http.post<Token>("https://localhost:7020/api/Authenntication/Authenticate",login);
   }
 }
