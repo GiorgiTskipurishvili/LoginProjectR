@@ -1,58 +1,7 @@
-// import { Component } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrl: './login.component.css'
-// })
-// export class LoginComponent {
-//   loginForm:FormGroup;
-
-//   constructor(private fb: FormBuilder, private router:Router){
-//     this.loginForm = this.fb.group({
-//       username:['',Validators.required],
-//       password:['', Validators.required]
-//     })
-//   }
-
-//   login(){
-//     if(this.loginForm.valid){
-//       const username = this.loginForm.get('username')?.value;
-//       const password = this.loginForm.get('password')?.value;
-
-//       localStorage.setItem('username', username);
-//       localStorage.setItem('password', password);
-
-//       this.router.navigate(['/main']);
-//     }else{
-//       alert('Please fill in both username and password')
-//     }
-//   }
-
-
-
-//   // username: string='';
-//   // password: string='';
-
-//   // constructor(private router:Router){}
-
-//   // login(){
-//   //   if(this.username==='admin'&& this.password==='admin123'){
-//   //     localStorage.setItem('username', this.username);
-//   //     localStorage.setItem('password',this.password);
-//   //     this.router.navigate(['/main']);
-//   //   }else{
-//   //     alert('Invalid Log In!')
-//   //   }
-//   // }
-// }
-
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -62,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router,private authService: AuthService) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -95,16 +44,19 @@ export class LoginComponent {
   //   }
   // }
 
+
   
   login() {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
   
-      localStorage.setItem('username', username);
-      localStorage.setItem('password', password);
+      // localStorage.setItem('username', username);
+      // localStorage.setItem('password', password);
   
-      this.router.navigate(['/main'], { queryParams: { products: 'true' } });
+      // this.router.navigate(['/main'], { queryParams: { products: 'true' } });
+
+      this.authService.LogIn(username, password);
     } else {
       alert('Please fill in both username and password');
     }

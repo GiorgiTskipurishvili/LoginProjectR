@@ -1,4 +1,7 @@
-<div>
-    <h3>{{data.title}}</h3>
-    <p>{{data.content}}</p>
+<div class="card">
+    <img [src]="data.imageUrl" alt="User Photo" class="user-photo" />
+    <h3>{{ data.first_Name }} {{ data.last_Name }}</h3>
+    <p>{{ data.position }}</p>
+    <button class="deleteButton" (click)="onDelete()">Delete</button>
+    <button class="editButton" [routerLink]="['/update-employee/:id']" >Edit</button>
 </div>
