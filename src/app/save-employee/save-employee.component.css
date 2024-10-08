@@ -1,15 +1,16 @@
 .save-employee-form{
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #d8f3c8;
     text-align: center;
   }
 
 .save-employee-form label {
     display: block;
     margin-bottom: 5px;
+    font-weight:bold;
   }
   
   .save-employee-form input {

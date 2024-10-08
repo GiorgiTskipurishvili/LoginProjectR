@@ -15,25 +15,25 @@
 .deleteButton{
   width: 100%;
   padding: 10px;  
-  background-color: #74ace9;
+  background-color: rgb(255, 0, 0);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .deleteButton:hover{
-  background-color: red;
+  background-color: rgb(167, 0, 0);
 }
 
 .editButton{
   width: 100%;
   padding: 10px;  
-  background-color: rgb(145, 145, 11);
+  background-color: rgb(185, 148, 27);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .editButton:hover{
-background-color: rgb(209, 209, 47);
+background-color: rgb(224, 175, 40);
 }

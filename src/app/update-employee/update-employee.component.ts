@@ -32,12 +32,6 @@ export class UpdateEmployeeComponent implements OnInit {
     this.employeeId = +this.route.snapshot.paramMap.get('id')!;
     this.loadEmployee();
   }
-  // loadEmployee(): void {
-  //   // Fetch the employee details from the service and populate the form
-  //   this.productService.getEmployeeById(this.employeeId).subscribe(employee => {
-  //     this.updateEmployeeForm.patchValue(employee);
-  //   });
-  // }
 
   loadEmployee(): void {
     this.productService.getEmployeeById(this.employeeId).subscribe({
@@ -50,36 +44,6 @@ export class UpdateEmployeeComponent implements OnInit {
       }
     });
   }
-
-  
-  
-
-
-  // updateEmployee(): void {
-  //   if (this.updateEmployeeForm.valid) {
-  //     this.productService.updateEmployee(this.employeeId, this.updateEmployeeForm.value).subscribe(() => {
-  //       alert('Employee updated successfully!');
-  //       this.router.navigate(['/main']);
-  //     });
-  //   }
-  // }
-  // updateEmployee(): void {
-  //   if (this.updateEmployeeForm.valid) {
-  //     this.productService.updateEmployee(this.employeeId, this.updateEmployeeForm.value).subscribe({
-  //       next: () => {
-  //         alert('Employee updated successfully!');
-  //         this.router.navigate(['/main']); // Navigate back to the main page after successful update
-  //       },
-  //       error: (err) => {
-  //         console.error('Error updating employee:', err);
-  //         alert('Failed to update employee. Please try again.');
-  //       }
-  //     });
-  //   } else {
-  //     alert('Please fill in all required fields');
-  //   }
-  
-  // }
 
 
   updateEmployee(): void {

@@ -7,14 +7,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { GetEmployeeComponent } from './get-employee/get-employee.component';
 import { RegistrationComponent } from './registration/registration.component';
 
-// const routes: Routes = [
-//   { path: '', component: LoginComponent },
-//   { path: 'main', component: MainComponent },
-//   {path: 'save-employee', component: SaveEmployeeComponent},
-//   { path: 'update-employee/:id', component: UpdateEmployeeComponent },
-//    { path: 'get-employee/:id', component: GetEmployeeComponent }
 
-// ];
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'main', component: MainComponent },
