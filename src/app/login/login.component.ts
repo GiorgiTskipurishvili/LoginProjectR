@@ -18,33 +18,6 @@ export class LoginComponent {
     });
   }
 
-  // login() {
-  //   if (this.loginForm.valid) {
-  //     const username = this.loginForm.get('username')?.value;
-  //     const password = this.loginForm.get('password')?.value;
-
-  //     localStorage.setItem('username', username);
-  //     localStorage.setItem('password', password);
-
-  //     this.router.navigate(['/main']);
-      
-
-  //     // if(username==='admin'&& password==='admin123'){  
-  //     // localStorage.setItem('username', username);
-  //     // localStorage.setItem('password', password);
-
-  //     // this.router.navigate(['/main']);
-  //     // }else{
-  //     //   alert('Invalid credentials. Please Try Again.');
-  //     // }
-
-
-  //   } else {
-  //     alert('please fill in both username and password');
-  //   }
-  // }
-
-
   
   login() {
     if (this.loginForm.valid) {

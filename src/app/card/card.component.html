@@ -3,5 +3,6 @@
     <h3>{{ data.first_Name }} {{ data.last_Name }}</h3>
     <p>{{ data.position }}</p>
     <button class="deleteButton" (click)="onDelete()">Delete</button>
-    <button class="editButton" [routerLink]="['/update-employee/:id']" >Edit</button>
+    <button class="editButton" [routerLink]="['/update-employee', data.id]">Edit</button>
+
 </div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { Employee } from './models/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -45,13 +46,29 @@ export class ProductService {
 
 
   // updateEmployee
-  updateEmployee(id: number, employee: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, employee);
+  // updateEmployee(id: number, employee: any): Observable<any> {
+  //   return this.http.put<any>(`${this.apiUrl}/${id}`, employee);
+  // }
+
+  //
+  // updateEmployee(id: number, employee: any): Observable<any> {
+  //   const token = this.cookieService.get('token');
+  //   const headers = new HttpHeaders({
+  //     'Authorization': `Bearer ${token}` // Include token
+  //   });
+
+  //   return this.http.put<any>(`${this.apiUrl}/${id}`, employee, { headers });
+  // }
+  updateEmployee(id: number, employee: Employee): Observable<void> {
+    const token = this.cookieService.get('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.put<void>(`${this.apiUrl}/${id}`, employee, { headers });
   }
 
   
-
-
 
   //getEmployee by ID
   // getEmployeeById(id: number): Observable<any> {

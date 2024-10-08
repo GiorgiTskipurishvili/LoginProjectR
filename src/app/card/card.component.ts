@@ -10,6 +10,8 @@ export class CardComponent {
   @Output() delete = new EventEmitter<void>(); 
   @Output() onEmployeeUpdated: EventEmitter<any> = new EventEmitter();
   @Output() edit = new EventEmitter<number>();
+
+  
   onDelete() {
     this.delete.emit(); 
   }

@@ -19,12 +19,14 @@ export class AuthService {
     this.userService.authenticateUser(this.login).subscribe(res => {
       this.cookieService.set('token',res.accessToken);
       this.router.navigate(['/main']);
+      this.cookieService.set('username', username); 
     })
   }
 
   LogOut()
   {
     this.cookieService.delete('token');
+    this.cookieService.delete('username');
   }
 
   IsAuthenticated(): boolean {
